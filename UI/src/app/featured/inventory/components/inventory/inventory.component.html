@@ -1,0 +1,30 @@
+<nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item">
+            <h4 style="font-family:lato;">Company</h4>
+        </li>
+    </ol>
+</nav>
+<div class="row" *ngIf="showCompanys">
+    <div class="col-md-12">
+        <h5>Select Company you want to login</h5>
+    </div>
+    <div class="col-md-12" >
+       {{userDetails.companies}}
+       <div *ngFor="let company of userDetails.companies">
+           <ul>
+               <li>
+                   <h4 (click)="selectCompany(company)">{{company}}</h4>
+               </li>
+           </ul>
+       </div>
+    </div>
+
+</div>
+<div class="row" *ngIf="showCompany">
+    <div class="col-md-12">
+        <div>
+            <h1>we have to show the information for : {{selectCompany}} Company</h1>
+        </div>
+     </div>
+</div>
